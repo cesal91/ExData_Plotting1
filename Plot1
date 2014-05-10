@@ -1,0 +1,3 @@
+A <- read.table("household_power_consumption.txt", header = FALSE, sep = ";", nrows =2880 , skip = 66637)
+x = A[,3]
+hist(x,nclass = 15, main = "Global Active Power", xlab = "Global Active Power(kilowatts)", col = "red")
