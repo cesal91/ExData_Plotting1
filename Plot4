@@ -1,0 +1,15 @@
+A <- read.table("household_power_consumption.txt", header = FALSE, sep = ";", nrows =2880 , skip = 66637)
+gap = A[,3]
+grp = A[,4]
+v = A[,5]
+sm1 = A[,7]
+sm2 = A[,8]
+sm3 = A[,9]
+par(mfrow = c(2,2))
+plot(gap,type = "l", ylab = "Global Active Power")
+plot(v,type = "l", ylab = "Voltage", xlab = "datetime")
+plot(sm1,type = "l", ylab = "Energy sub metering", col = "green")
+lines(sm2,type="l",col = "red")
+lines(sm3,type = "l", col = "blue")
+legend("topright",pch = 1, col = c("green","red","blue"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_1"))
+plot(grp,type = "l", ylab = "Global Reactive Power",xlab = "datetime")
