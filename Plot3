@@ -1,0 +1,8 @@
+A <- read.table("household_power_consumption.txt", header = FALSE, sep = ";", nrows =2880 , skip = 66637)
+x = A[,7]
+y = A[,8]
+z = A[,9]
+plot(x,type = "l", ylab = "Energy sub metering", col = "green")
+lines(y,type="l",col = "red")
+lines(z,type = "l", col = "blue")
+legend("topright",pch = 1, type = "l", col = c("green","red","blue"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_1"))
